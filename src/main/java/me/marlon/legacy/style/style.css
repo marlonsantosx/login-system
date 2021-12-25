@@ -1,0 +1,32 @@
+/*
+    !-- Starting CSS style;
+    -----------------------------------
+    * Color Main: #ffa500 - 50%;
+    * Color Secondary: #e69500 - 45%;
+    * Color Picker: #ffc966 - 70%;
+*/
+
+/*
+    !-- Set Index CSS;
+*/
+.sidebar{
+    -fx-background-color: #ffa500;
+    -fx-background-radius: 10 10 10 10;
+}
+.sidebar_top{
+    -fx-background-color: #e69500;
+    -fx-background-radius: 10 10 0 0;
+}
+
+#close, #minimized{
+    -fx-background-color: #ffa500;
+    -fx-text-fill: white;
+}
+
+#minimized:hover{
+    -fx-background-color: #ffc966;
+}
+
+#close:hover{
+    -fx-background-color: #d92626;
+}

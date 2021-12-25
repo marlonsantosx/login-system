@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="me.marlon.legacy.App"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.marlon.legacy.listener.Listeners">
+   <children>
+      <AnchorPane layoutX="35.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <HBox alignment="TOP_RIGHT" prefHeight="35.0" prefWidth="300.0" spacing="5.0" styleClass="sidebar_top" stylesheets="@style.css">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Button id="minimized" fx:id="minimized" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="16.0" prefWidth="16.0" text="–" />
+                  <Button id="close" fx:id="exit" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="16.0" prefWidth="16.0" text="X" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="286.0" layoutY="65.0" prefHeight="270.0" prefWidth="300.0" />
+   </children>
 </AnchorPane>
