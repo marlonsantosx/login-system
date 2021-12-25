@@ -7,9 +7,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.SneakyThrows;
+import me.marlon.legacy.data.account.User;
 
 import java.io.File;
 import java.net.URL;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class App extends Application implements Initializable {
@@ -27,6 +30,9 @@ public class App extends Application implements Initializable {
         stage.setScene(new Scene(parent));
         stage.setResizable(false);
         stage.show();
+
+        User user = new User("Marlon");
+        user.setName();
 
         System.out.println("[AVISO] Projeto iniciado com sucesso. [" + (System.currentTimeMillis() - start) + " ms]");
     }

@@ -3,16 +3,19 @@ package me.marlon.legacy.data.account;
 public interface UserData {
 
     void create();
-    void update();
+    void update(String paramString, Object paramObject);
 
     long getFirstLogin();
     void setFirstLogin(long paramLong);
 
-    long getLastSenn();
+    long getLastSeen();
     void setLastSeen(long paramLong);
+    
+    String getFormattedFirstLogin();
+    String getFormattedLastSeen();
 
     String getName();
-    void setName(String paramString);
+    void setName();
 
     String getSorname();
     void setSorname(String paramString);
@@ -22,5 +25,7 @@ public interface UserData {
 
     String getPassword();
     void setPassword(String paramString);
+
+
 
 }

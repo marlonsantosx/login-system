@@ -15,6 +15,6 @@ public class Mongodb{
     static{
         client = MongoClients.create();
         database = client.getDatabase("legacy");
-        account = database.getCollection("account");
+        account = database.getCollection("user_accounts");
     }
 }
