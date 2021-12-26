@@ -16,5 +16,6 @@ public class Mongodb{
         client = MongoClients.create();
         database = client.getDatabase("legacy");
         account = database.getCollection("user_accounts");
+        System.out.println("Mongodb conectado com sucesso!");
     }
 }

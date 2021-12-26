@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.marlon.legacy.listener.Listeners">
+<AnchorPane prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.marlon.legacy.listener.Listeners">
    <children>
-      <AnchorPane fx:id="sidebar" layoutX="35.0" layoutY="50.0" prefHeight="300.0" prefWidth="300.0" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0">
+      <AnchorPane fx:id="sidebar" layoutX="35.0" layoutY="50.0" prefHeight="369.0" prefWidth="300.0" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
          <children>
             <HBox fx:id="sidebar_top" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="300.0" spacing="5.0" styleClass="sidebar_top" stylesheets="@style.css">
                <padding>
@@ -44,15 +44,10 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="145.0" fitWidth="95.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@image/logo.png" />
-                     </image>
-                  </ImageView>
                </children>
             </VBox>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="286.0" layoutY="65.0" prefHeight="270.0" prefWidth="300.0" />
+      <AnchorPane layoutX="300.0" layoutY="70.0" prefHeight="340.0" prefWidth="341.0" style="-fx-background-color: white; -fx-background-radius: 0 30 30 0;" />
    </children>
 </AnchorPane>
