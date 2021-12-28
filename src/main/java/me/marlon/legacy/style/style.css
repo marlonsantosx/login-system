@@ -31,11 +31,21 @@
     -fx-background-color: #d92626;
 }
 
+.sidebar_login #warningBox{
+    -fx-background-color: #ffe4b3;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.sidebar_login #warning{
+    -fx-text-fill: red;
+    -fx-font-size: 15px;
+}
+
 .sidebar_login #field{
     -fx-background-radius: 5 5 5 5;
     -fx-border-color: #ffa500;
     -fx-border-radius: 5 5 5 5;
-    -fx-border-width: 2;
+    -fx-border-width: 1.5;
     -fx-font-size: 15px;
 }
 
@@ -43,7 +53,7 @@
     -fx-background-radius: 5 5 5 5;
     -fx-border-color: #ffa500;
     -fx-border-radius: 5 5 5 5;
-    -fx-border-width: 2;
+    -fx-border-width: 1.5;
     -fx-font-size: 15px;
 }
 
@@ -51,7 +61,7 @@
     -fx-background-radius: 5 5 5 5;
     -fx-border-color: #ffa500;
     -fx-border-radius: 5 5 5 5;
-    -fx-border-width: 2;
+    -fx-border-width: 1.5;
     -fx-font-size: 15px;
 }
 

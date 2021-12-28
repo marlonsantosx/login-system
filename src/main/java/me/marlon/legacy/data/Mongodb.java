@@ -7,7 +7,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
 
-public class Mongodb{
+public class Mongodb {
 
     public static MongoClient client;
     public static MongoDatabase database;
@@ -16,6 +16,5 @@ public class Mongodb{
         client = MongoClients.create();
         database = client.getDatabase("legacy");
         account = database.getCollection("user_accounts");
-        System.out.println("Mongodb conectado com sucesso!");
     }
 }

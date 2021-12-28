@@ -26,6 +26,7 @@ public class User implements UserData{
             has = true;
     }
 
+
     @Override
     public void create() {
 
@@ -70,7 +71,6 @@ public class User implements UserData{
     public void setLastName(String paramString) {
         update("lastName", paramString);
     }
-
 
     @Override
     public String getPassword() {

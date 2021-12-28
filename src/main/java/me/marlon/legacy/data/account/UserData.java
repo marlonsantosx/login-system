@@ -14,7 +14,6 @@ public interface UserData {
     String getLastName();
     void setLastName(String paramString);
 
-
     String getPassword();
     void setPassword(String paramString);
 
