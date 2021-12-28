@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -21,10 +23,16 @@ public class Listeners implements Initializable {
     private HBox sidebar_top;
 
     @FXML
+    private ImageView eye;
+
+    @FXML
     private Button minimized, exit;
 
     @FXML
     private Label title;
+
+    @FXML
+    private PasswordField pwd;
 
     public static Stage stage;
     public double x = 0, y = 0;
@@ -49,7 +57,6 @@ public class Listeners implements Initializable {
             final Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
             stage.close();
         });
-
     }
 
 }

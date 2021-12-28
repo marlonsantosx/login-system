@@ -24,7 +24,6 @@ public class User implements UserData{
             document = new Document("email", email);
         } else
             has = true;
-        System.out.println(has);
     }
 
     @Override

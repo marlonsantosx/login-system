@@ -36,12 +36,6 @@ public class App extends Application {
         stage.getIcons().add(new Image("file:///" + path + "/legacy/style/image/logo.png"));
         stage.setTitle(title);
 
-        User user = new User("marlongamamacedo@gmail.com");
-        user.setFirstName("Marlon");
-        user.setLastName("Santos");
-        user.setFirstLogin(0L);
-        user.setLastSeen(0L);
-
         Listeners.stage = stage;
         stage.show();
         System.out.println("[AVISO] Projeto iniciado com sucesso. [" + (System.currentTimeMillis() - start) + " ms]");

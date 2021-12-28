@@ -18,15 +18,64 @@
     -fx-background-radius: 10 10 0 0;
 }
 
-#close, #minimized{
+.sidebar #close, #minimized{
     -fx-background-color: #ffa500;
     -fx-text-fill: white;
 }
 
-#minimized:hover{
+.sidebar #minimized:hover{
     -fx-background-color: #ffc966;
 }
 
-#close:hover{
+.sidebar #close:hover{
     -fx-background-color: #d92626;
+}
+
+.sidebar_login #field{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-color: #ffa500;
+    -fx-border-radius: 5 5 5 5;
+    -fx-border-width: 2;
+    -fx-font-size: 15px;
+}
+
+.sidebar_login #field:hover{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-color: #ffa500;
+    -fx-border-radius: 5 5 5 5;
+    -fx-border-width: 2;
+    -fx-font-size: 15px;
+}
+
+.sidebar_login #field:focused{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-color: #ffa500;
+    -fx-border-radius: 5 5 5 5;
+    -fx-border-width: 2;
+    -fx-font-size: 15px;
+}
+
+.sidebar_login #login{
+    -fx-background-color: #ffa500;
+    -fx-text-fill: white;
+}
+
+.sidebar_login #login:hover{
+    -fx-background-color: #e69500;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.sidebar_login #forgotPassword{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.sidebar_login #forgotPassword:hover{
+    -fx-text-fill: #e69500;
+    -fx-cursor: hand;
+}
+
+.sidebar_login #eye{
+    -fx-cursor: hand;
 }
