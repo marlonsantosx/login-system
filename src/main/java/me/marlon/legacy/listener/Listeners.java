@@ -5,6 +5,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -26,10 +28,13 @@ public class Listeners implements Initializable {
     private ImageView eye;
 
     @FXML
-    private Button minimized, exit;
+    private Button minimized, exit, login;
 
     @FXML
-    private Label title;
+    private Label title, warning, pwdForgot;
+
+    @FXML
+    private TextField email, pwdText;
 
     @FXML
     private PasswordField pwd;
@@ -57,6 +62,37 @@ public class Listeners implements Initializable {
             final Stage stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
             stage.close();
         });
+
+        pwdText.setVisible(false);
+        eye.setOnMouseClicked(event -> {
+            if(pwd.isVisible()) {
+                eye.setImage(new Image("file:///" + App.path + "/style/image/icon/showEye.png"));
+                pwd.setVisible(false);
+                pwdText.setVisible(true);
+                pwdText.setText(pwd.getText());
+            } else {
+                eye.setImage(new Image("file:///" + App.path + "/style/image/icon/hideEye.png"));
+                pwd.setVisible(true);
+                pwdText.setVisible(false);
+                pwd.setText(pwdText.getText());
+            }
+        });
+
+        login.setOnMouseClicked(event -> {
+            if(email.getText().isEmpty() && pwdText.getText().isEmpty() || pwd.getText().isEmpty()) {
+                warning.setText("* Insira o nome de e-mail e senha.");
+                return;
+            }
+            if(email.getText().isEmpty() && !pwdText.getText().isEmpty() || !pwd.getText().isEmpty()) {
+                warning.setText("* Insira o nome de e-mail.");
+                return;
+            }
+            if(!email.getText().isEmpty() && pwdText.isVisible() && pwdText.getText().isEmpty() || pwd.isVisible() && pwd.getText().isEmpty()) {
+                warning.setText("* Insira sua senha.");
+                return;
+            }
+        });
+
     }
 
 }
