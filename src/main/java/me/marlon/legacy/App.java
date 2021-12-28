@@ -15,7 +15,7 @@ import java.io.File;
 
 public class App extends Application {
 
-    public static final String localHistory = "C:/Users/Marlon/IdeaProjects/legacy/src/main/java/me/marlon",
+    public static final String path = "C:/Users/Marlon/IdeaProjects/legacy/src/main/java/me/marlon",
     title = "Login System",
     version = "1.0v";
 
@@ -28,16 +28,19 @@ public class App extends Application {
         long start = System.currentTimeMillis();
         System.out.println("[AVISO] Iniciando o projeto.");
 
-        Parent parent = FXMLLoader.load(new File(localHistory + "/legacy/style/index.fxml").toURL());
+        Parent parent = FXMLLoader.load(new File(path + "/legacy/style/index.fxml").toURL());
         stage.setScene(new Scene(parent));
         stage.setResizable(false);
         stage.getScene().setFill(Color.TRANSPARENT);
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.getIcons().add(new Image("file:///" + localHistory + "/legacy/style/image/logo.png"));
+        stage.getIcons().add(new Image("file:///" + path + "/legacy/style/image/logo.png"));
         stage.setTitle(title);
 
-        User user = new User("Marlon");
-        user.setName();
+        User user = new User("marlongamamacedo@gmail.com");
+        user.setFirstName("Marlon");
+        user.setLastName("Santos");
+        user.setFirstLogin(0L);
+        user.setLastSeen(0L);
 
         Listeners.stage = stage;
         stage.show();

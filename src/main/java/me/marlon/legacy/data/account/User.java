@@ -9,21 +9,22 @@ import java.text.SimpleDateFormat;
 
 public class User implements UserData{
 
-    public final String username;
+    public final String email;
     private Document document;
     private final Bson filter;
 
-    public final boolean has;
+    public boolean has;
 
-    public User(String username) {
-        this.username = username;
-        filter = Filters.eq("username", username);
+    public User(String email) {
+        this.email = email;
+        filter = Filters.eq("email", email);
         document = Mongodb.account.find(filter).first();
         if(document == null) {
             has = false;
-            document = new Document("username", username);
+            document = new Document("email", email);
         } else
             has = true;
+        System.out.println(has);
     }
 
     @Override
@@ -33,11 +34,53 @@ public class User implements UserData{
 
     @Override
     public void update(final String name, final Object object) {
-        if (has)
-            Mongodb.account.updateOne(filter, new Document("$set", new Document(name, object)));
-        else
-            Mongodb.account.insertOne(document);
         document.put(name, object);
+        if (!has) {
+            Mongodb.account.insertOne(document);
+            has = true;
+        } else
+            Mongodb.account.updateOne(filter, new Document("$set", new Document(name, object)));
+    }
+
+    @Override
+    public String getEmail() {
+        return document.getString("email");
+    }
+
+    @Override
+    public void setEmail() {
+        update("email", this.email);
+    }
+
+    @Override
+    public String getFirstName() {
+        return document.getString("firstName");
+    }
+
+    @Override
+    public void setFirstName(String paramString) {
+        update("firstName", paramString);
+    }
+
+    @Override
+    public String getLastName() {
+        return document.getString("lastName");
+    }
+
+    @Override
+    public void setLastName(String paramString) {
+        update("lastName", paramString);
+    }
+
+
+    @Override
+    public String getPassword() {
+        return document.getString("password");
+    }
+
+    @Override
+    public void setPassword(String paramString) {
+        update("password", paramString);
     }
 
     @Override
@@ -72,43 +115,4 @@ public class User implements UserData{
         return format.format(getLastSeen());
     }
 
-    @Override
-    public String getName() {
-        return document.getString("username");
-    }
-
-    @Override
-    public void setName() {
-        update("username", username);
-    }
-
-    @Override
-    public String getSorname() {
-        return document.getString("userLastName");
-    }
-
-    @Override
-    public void setSorname(String paramString) {
-        update("userLastName", paramString);
-    }
-
-    @Override
-    public String getEmail() {
-        return document.getString("email");
-    }
-
-    @Override
-    public void setEmail(String paramString) {
-        update("email", paramString);
-    }
-
-    @Override
-    public String getPassword() {
-        return document.getString("password");
-    }
-
-    @Override
-    public void setPassword(String paramString) {
-        update("password", paramString);
-    }
 }
